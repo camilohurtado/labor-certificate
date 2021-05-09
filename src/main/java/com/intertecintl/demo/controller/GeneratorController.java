@@ -1,6 +1,6 @@
 package com.intertecintl.demo.controller;
 
-import com.intertecintl.demo.service.GeneratorService;
+import com.intertecintl.demo.service.generator.GeneratorService;
 import com.lowagie.text.DocumentException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

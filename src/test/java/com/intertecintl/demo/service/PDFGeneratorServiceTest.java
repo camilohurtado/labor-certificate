@@ -1,6 +1,7 @@
 package com.intertecintl.demo.service;
 
 
+import com.intertecintl.demo.service.generator.PDFGeneratorService;
 import com.lowagie.text.DocumentException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
