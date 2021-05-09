@@ -17,9 +17,10 @@ public class Employee
     String password;
 
     String name;
-    String id;
+    Long id;
+    String ssn;
     String position;
     String salary;
-    LocalDate inDate;
+    LocalDate hireDate;
 
 }
