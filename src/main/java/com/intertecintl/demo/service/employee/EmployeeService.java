@@ -8,4 +8,5 @@ public interface EmployeeService
 {
     public List<Employee> getAllEmployees();
     public Employee getEmployeeById(String employeeId);
+    public Employee getEmployeeByEmail(String email);
 }

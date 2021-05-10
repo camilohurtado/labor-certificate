@@ -29,4 +29,15 @@ public class EmployePersistenceService implements EmployeeService
         if(employeeEntity != null) return EmployeeEntity.toDto(employeeEntity);
         return null;
     }
+
+    @Override
+    public Employee getEmployeeByEmail(String email)
+    {
+        if(email != null && !email.isBlank())
+        {
+            Employee employee = EmployeeEntity.toDto(employeeRepository.findByEmail(email));
+            return employee;
+        }
+        return null;
+    }
 }

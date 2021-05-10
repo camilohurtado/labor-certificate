@@ -9,4 +9,5 @@ public interface EmployeeRepository extends Repository<EmployeeEntity, Long>
 {
     public List<EmployeeEntity> getAllEmployees();
     public EmployeeEntity findByKey(String id);
+    public EmployeeEntity findByEmail(String email);
 }
