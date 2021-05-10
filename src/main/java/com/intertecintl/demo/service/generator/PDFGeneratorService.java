@@ -1,5 +1,6 @@
 package com.intertecintl.demo.service.generator;
 
+import com.intertecintl.demo.model.Employee;
 import com.lowagie.text.DocumentException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
@@ -17,13 +18,13 @@ import java.io.OutputStream;
 @RequiredArgsConstructor
 public class PDFGeneratorService implements GeneratorService<File>
 {
-    private static final String TEMPLATE_PATH = "/pdf/";
+    private static final String TEMPLATE_PATH = "/templates/";
     private final SpringTemplateEngine springTemplateEngine;
 
     @Override
-    public File generate() throws IOException, DocumentException
+    public File generate(Employee employee) throws IOException, DocumentException
     {
-        Context thymeleafContext = new Context();
+        Context thymeleafContext = getContext(employee);
         String html = springTemplateEngine.process("template", thymeleafContext);
         return render(html);
     }
@@ -39,5 +40,12 @@ public class PDFGeneratorService implements GeneratorService<File>
         outputStream.close();
         file.deleteOnExit();
         return file;
+    }
+
+    private Context getContext(Employee employee)
+    {
+        Context context = new Context();
+        context.setVariable("employee", employee);
+        return context;
     }
 }
