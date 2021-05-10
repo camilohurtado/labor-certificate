@@ -21,6 +21,8 @@ public class Employee
     String ssn;
     String position;
     String salary;
+    String city;
+    String country;
     LocalDate hireDate;
 
 }
